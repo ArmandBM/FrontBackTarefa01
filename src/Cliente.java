@@ -7,14 +7,14 @@ public class Cliente {
     private CPF cpf;
 
     public Cliente(String nome, LocalDate dataNascimento, CPF cpf){
-        alteraNome(nome);
+        alterarNome(nome);
         this.dataNascimento = dataNascimento;
         this.cpf = cpf;
     }
 
-    public void alteraNome(String nome){
+    public void alterarNome(String nome){
         if(nome == null || nome.isEmpty() || nome.trim().isEmpty()){
-            throw new InputMismatchException("Nome informado incorretamente");
+            throw new InputMismatchException("Nome não pode ser vazio.");
         }
         this.nome = nome;
     }

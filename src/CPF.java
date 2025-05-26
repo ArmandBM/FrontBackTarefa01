@@ -6,7 +6,7 @@ public class CPF {
 
     public CPF(String cpf){
 
-        if(validaCPF(cpf)){
+        if(validarCPF(cpf)){
             this.cpf = cpf;
         } else {
             throw new InputMismatchException("CPF informado incorretamente");
@@ -14,7 +14,7 @@ public class CPF {
 
     }
 
-    private boolean validaCPF(String cpf){
+    private boolean validarCPF(String cpf){
         int soma = 0;
         int primeiroDigito, segundoDigito;
 

@@ -10,14 +10,14 @@ public class Contratacao {
     private Pacote pacote;
 
     public Contratacao(BigDecimal valor, LocalDate dataContratacao, Cliente cliente, Pacote pacote){
-        this.valor = validaValor(valor);
+        this.valor = validarValor(valor);
         this.dataContratacao = dataContratacao;
         this.cliente = cliente;
         this.pacote = pacote;
 
     }
 
-    private static BigDecimal validaValor(BigDecimal valor){
+    private static BigDecimal validarValor(BigDecimal valor){
         if(valor.doubleValue() < 0){
             throw new InputMismatchException("Valores negativos não são aceitos");
         }

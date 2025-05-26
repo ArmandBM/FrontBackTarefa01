@@ -3,32 +3,31 @@ import java.util.UUID;
 
 public class Pacote {
 
-    private String nome;
     private String descricao;
     private final UUID idUnico;
+    private final Localidade localidade;
 
-    public Pacote(String nome, String descricao){
-        this.nome = alteraNome(nome);
-        this.descricao = descricao;
+    public Pacote(String descricao, Localidade localidade){
+        this.descricao = alterarDescricao(descricao);
+        this.localidade = localidade;
         idUnico = UUID.randomUUID();
     }
 
-    public String alteraNome(String nome){
-        if(nome == null || nome.isEmpty() || nome.trim().isEmpty()){
-            throw new InputMismatchException("Nome informado incorretamente");
+    public String alterarDescricao(String descricao){
+        if(descricao == null || descricao.isEmpty() || descricao.trim().isEmpty()){
+            throw new InputMismatchException("descrição não pode ser vazia.");
         }
-        return nome;
+        return descricao;
     }
 
-    public String retornaNome(){
-        return this.nome;
-    }
-
-    public String retornaDescricao(){
+    public String obterDescricao(){
         return this.descricao;
     }
 
-    public String retornaid(){
-        return this.idUnico.toString();
+    public UUID obterId(){
+        return this.idUnico;
+    }
+    public Localidade obterLocalidade() {
+        return localidade;
     }
 }
