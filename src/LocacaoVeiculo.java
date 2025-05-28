@@ -1,20 +1,14 @@
-import java.util.InputMismatchException;
-
 public class LocacaoVeiculo extends ItemPacote{
 
-    private final Marca marca;
-    private Modelo modelo;
+    private Automovel veiculo;
 
-    public LocacaoVeiculo(Double preco, Pacote pacote, Marca marca, Modelo modelo) {
+    public LocacaoVeiculo(Double preco, Pacote pacote, Automovel carro) {
         super(preco, pacote);
-        this.marca = marca;
-        this.modelo = modelo;
+        this.veiculo = carro;
     }
 
-    public Modelo obterModelo() {
-        return modelo;
+    public Automovel retornaVeiculo(){
+        return this.veiculo;
     }
-    public Marca obterMarca() {
-        return marca;
-    }
+
 }
